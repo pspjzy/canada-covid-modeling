@@ -1,13 +1,35 @@
-package test;
+package test.data.entity;
+import javax.persistence.*;
 
+@Entity
+@Table(name="DATAMODEL")
 public class DataModel {
+
+
+    @Id
+    @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int ID;
+    @Column(name = "CASES")
     private int cases;
+    @Column(name = "TODAYS_CASE")
     private int todayCases;
+    @Column(name = "DEATHS")
     private int deaths;
+    @Column(name = "RECOVERED")
     private int recovered;
+    @Column(name = "CRITICAL")
     private int critical;
+    @Column(name = "TESTS")
     private int tests;
 
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
     public int getCases() {
         return cases;
     }

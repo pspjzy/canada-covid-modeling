@@ -1,7 +1,8 @@
-package test;
+package test.controller;
 
 
 import com.google.gson.Gson;
+import test.data.entity.DataModel;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
