@@ -1,4 +1,6 @@
 package test.data.entity;
+
+
 import javax.persistence.*;
 
 @Entity
