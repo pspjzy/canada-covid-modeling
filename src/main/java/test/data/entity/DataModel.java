@@ -2,6 +2,7 @@ package test.data.entity;
 
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name="DATAMODEL")
@@ -24,6 +25,17 @@ public class DataModel {
     private int critical;
     @Column(name = "TESTS")
     private int tests;
+
+    public Timestamp getTime() {
+        return time;
+    }
+
+    public void setTime(Timestamp time) {
+        this.time = time;
+    }
+
+    @Column(name = "TIME")
+    private Timestamp time;
 
     public int getID() {
         return ID;
