@@ -1,11 +1,11 @@
-package test.service;
+package ccm.service;
 
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-import test.data.entity.DataModel;
-import test.data.repository.DataModelRepo;
+import ccm.data.entity.DataModel;
+import ccm.data.repository.DataModelRepo;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;

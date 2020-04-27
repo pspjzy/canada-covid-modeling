@@ -1,8 +1,8 @@
-package test.controller;
+package ccm.controller;
 
 
 import com.google.gson.Gson;
-import test.data.entity.DataModel;
+import ccm.data.entity.DataModel;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;

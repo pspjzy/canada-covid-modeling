@@ -1,4 +1,4 @@
-package test.data.entity;
+package ccm.data.entity;
 
 
 import javax.persistence.*;
