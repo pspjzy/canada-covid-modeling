@@ -1,17 +1,15 @@
 package test.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import test.data.entity.DataModel;
 import test.service.*;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/data")
 public class dataController {
     private final ccdService cS;
@@ -20,10 +18,9 @@ public class dataController {
     public dataController(ccdService cS) {
         this.cS = cS;
     }
-    @GetMapping
+    @GetMapping("/api")
     public Iterable<DataModel> getAllDatas(){
         return cS.getAll();
     }
-
 
 }

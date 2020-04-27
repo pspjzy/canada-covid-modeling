@@ -26,7 +26,7 @@ public class ccdService {
         this.dataModelRepo = dataModelRepo;
     }
 
-    @Scheduled(cron = "0 0 */1 * * *")//start at 28
+    @Scheduled(fixedRate = 600000)//(cron = "0 0 */1 * * *")
     public void autoSetData(){
         HttpsURLConnection connection;
         StringBuffer response;
