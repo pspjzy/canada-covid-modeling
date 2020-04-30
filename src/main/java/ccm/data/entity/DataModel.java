@@ -26,16 +26,16 @@ public class DataModel {
     @Column(name = "TESTS")
     private int tests;
 
-    public Timestamp getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Timestamp time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
     @Column(name = "TIME")
-    private Timestamp time;
+    private String time;
 
     public int getID() {
         return ID;

@@ -14,6 +14,8 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 
@@ -53,7 +55,9 @@ public class ccdService {
                 }
                 Gson gson = new Gson();
                 DataModel data = gson.fromJson(String.valueOf(response),DataModel.class);
-                data.setTime(new Timestamp(System.currentTimeMillis()));
+                SimpleDateFormat formatter = new SimpleDateFormat("EE MMM d y H:m:s ZZZ");
+                String dateString = formatter.format(new Date());
+                data.setTime(new Timestamp(System.currentTimeMillis()).toString());   //new Timestamp(System.currentTimeMillis()));
                 dataModelRepo.save(data);
                 in.close();
             } else {
@@ -71,6 +75,10 @@ public class ccdService {
     public List<DataModel> getDataByDate(Timestamp ts){
         List<DataModel> dataModels = dataModelRepo.findDataModelByTime(new Timestamp(ts.getTime()));
         return dataModels;
+    }
+    @Scheduled(cron = "0 0 23 * * ?")//(cron = "0 0 */1 * * *")
+    public void revomeData(){
+        dataModelRepo.deleteAll();
     }
 
     public Iterable<DataModel> getAll(){

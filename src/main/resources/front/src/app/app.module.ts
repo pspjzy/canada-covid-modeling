@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {DataViewComponent} from './dataview.component'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DataViewComponent } from './dataview/data-view.component';
+import {DataViewService} from "./dataview/dataview.service";
+import {HttpClientModule} from "@angular/common/http";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -11,9 +14,11 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [DataViewService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
