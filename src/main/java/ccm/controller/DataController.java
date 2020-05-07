@@ -8,11 +8,11 @@ import ccm.service.*;
 @RestController
 @RequestMapping("/data")
 @CrossOrigin(origins = "http://127.0.0.1:4200")
-public class dataController {
-    private final ccdService cS;
+public class DataController {
+    private final CcdService cS;
 
     @Autowired
-    public dataController(ccdService cS) {
+    public DataController(CcdService cS) {
         this.cS = cS;
     }
     @GetMapping("/api")

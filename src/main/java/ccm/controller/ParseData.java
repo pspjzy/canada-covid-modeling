@@ -9,7 +9,12 @@ import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.List;
+
 public class ParseData {
+
 
     private static HttpsURLConnection connection;
     private StringBuffer response;
@@ -52,11 +57,11 @@ public class ParseData {
 
 
     public static void main(String[] args) throws IOException{
-        ParseData t = new ParseData();
-        System.out.println(t.getData().getDeaths());
-
-
-
+        Instant now = Instant.now();
+        Instant yesterday = now.minus(1, ChronoUnit.DAYS);
+        System.out.println(now);
+        String y = yesterday.toString().substring(0,10);
+        System.out.println(y);
     }
 
 

@@ -1,5 +1,5 @@
 # canada-covid-modeling
-The visual data model of covid in canada. (Still working on)
+The daily-base visual data model of covid in canada. (Still working on)
 
 Springboot+Angular
 
@@ -8,8 +8,8 @@ Canada Covid Data are from ***[worldometers](https://www.worldometers.info/coron
 TODOs:
 - [x] REST API
 - [X] Data automation retrieve
-- [ ] Frontend structure
-- [ ] Data visualization
+- [X] Frontend structure
+- [X] Data visualization
 - [ ] Testing
 - [ ] Demo Service deploy
 - [X] Pray :pray:

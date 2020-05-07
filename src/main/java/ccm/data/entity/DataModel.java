@@ -2,7 +2,7 @@ package ccm.data.entity;
 
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+
 
 @Entity
 @Table(name="DATAMODEL")
@@ -25,6 +25,50 @@ public class DataModel {
     private int critical;
     @Column(name = "TESTS")
     private int tests;
+    @Column(name = "TODAY_DEATH")
+    private Integer todayDeath;
+    @Column(name = "TODAY_RECOVERED")
+    private Integer todayRecovered;
+    @Column(name = "TODAY_CRITICAL")
+    private Integer todayCritical;
+    @Column(name = "TODAY_TEST")
+    private Integer todayTest;
+    @Column(name = "TIME")
+    private String time;
+    public int getTodayDeath() {
+        return todayDeath;
+    }
+
+    public void setTodayDeath(int todayDeath) {
+        this.todayDeath = todayDeath;
+
+    }
+
+    public int getTodayRecovered() {
+        return todayRecovered;
+    }
+
+    public void setTodayRecovered(int todayRecovered) {
+        this.todayRecovered = todayRecovered;
+    }
+
+    public int getTodayCritical() {
+        return todayCritical;
+    }
+
+    public void setTodayCritical(int todayCritical) {
+        this.todayCritical = todayCritical;
+    }
+
+    public int getTodayTest() {
+        return todayTest;
+    }
+
+    public void setTodayTest(int todayTest) {
+        this.todayTest = todayTest;
+    }
+
+
 
     public String getTime() {
         return time;
@@ -34,8 +78,6 @@ public class DataModel {
         this.time = time;
     }
 
-    @Column(name = "TIME")
-    private String time;
 
     public int getID() {
         return ID;

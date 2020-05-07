@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface DataModelRepo extends CrudRepository<DataModel, Integer> {
     List<DataModel> findDataModelByTime(Timestamp time);
+    DataModel findTop1ByOrderByTodayCases();
+
 }

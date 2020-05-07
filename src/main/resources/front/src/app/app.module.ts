@@ -6,6 +6,7 @@ import { DataViewComponent } from './dataview/data-view.component';
 import {DataViewService} from "./dataview/dataview.service";
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,14 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot([
+      { path: '', component: DataViewComponent},
+      { path: '', component: DataViewComponent},
+      { path: '', component: DataViewComponent},
+      { path: '', component: DataViewComponent},
+      { path: '', component: DataViewComponent}
+    ])
   ],
   providers: [DataViewService],
   bootstrap: [AppComponent]
