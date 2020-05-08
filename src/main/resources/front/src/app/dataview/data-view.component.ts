@@ -1,24 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {DataViewService} from "./dataview.service";
 import { Chart } from 'chart.js'
-import {Data} from "../data";
 
 @Component({
   selector: 'app-dataview',
   templateUrl: './data-view.component.html',
-  styleUrls: ['./data-view.component.css']
 })
 export class DataViewComponent implements OnInit {
-  chart1 = [];
-
-  chart2 = [];
-
-  chart3 = [];
-
-
+  chart = [];
   dataview = [];
-
-
   constructor(private dService: DataViewService) {
   }
 
@@ -75,10 +65,8 @@ export class DataViewComponent implements OnInit {
 
       })//需要test
 
-        console.log(time)
 
-
-      this.chart1.push(new Chart('canvas1',{
+      this.chart.push(new Chart('canvas1',{
         type: 'line',
         data: {
           labels: hour,
@@ -97,7 +85,7 @@ export class DataViewComponent implements OnInit {
 
       }))
 
-      this.chart1.push(new Chart('canvas2',{
+      this.chart.push(new Chart('canvas2',{
         type: 'line',
         data: {
           labels: hour,
@@ -116,7 +104,7 @@ export class DataViewComponent implements OnInit {
 
       }))
 
-      this.chart1.push(new Chart('canvas3',{
+      this.chart.push(new Chart('canvas3',{
         type: 'line',
         data: {
           labels: hour,
@@ -135,7 +123,7 @@ export class DataViewComponent implements OnInit {
 
       }))
 
-      this.chart1.push(new Chart('canvas4',{
+      this.chart.push(new Chart('canvas4',{
         type: 'line',
         data: {
           labels: hour,
@@ -153,7 +141,7 @@ export class DataViewComponent implements OnInit {
         options: option
 
       }))
-      this.chart1.push(new Chart('canvas5',{
+      this.chart.push(new Chart('canvas5',{
         type: 'line',
         data: {
           labels: hour,
