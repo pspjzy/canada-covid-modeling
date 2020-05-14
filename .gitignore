@@ -2,3 +2,4 @@
 /target/
 /.idea/
 /src/main/appengine/
+/keystore.p12/
