@@ -69,13 +69,20 @@ public class CcdService {
                 /*
                 If the data is 0 before the midnight, reset to highest
                  */
-                if (data.getTodayCases() == 0){
+                if ((data.getTodayCases() == 0) && (dataModelRepo.findTop1ByOrderByTodayCases() != null)){
                     data.setTodayCases(dataModelRepo.findTop1ByOrderByTodayCases().getTodayCases());
                 }
-                data.setTodayCritical(data.getCritical()-findYesterday().getDailyCritical());
-                data.setTodayDeath(data.getDeaths()-findYesterday().getDailyDeaths());
-                data.setTodayRecovered(data.getRecovered()-findYesterday().getDailyRecovered());
-                data.setTodayTest(data.getTests()-findYesterday().getDailyTests());
+                if(findYesterday()!=null) {
+                    data.setTodayCritical(data.getCritical() - findYesterday().getDailyCritical());
+                    data.setTodayDeath(data.getDeaths() - findYesterday().getDailyDeaths());
+                    data.setTodayRecovered(data.getRecovered() - findYesterday().getDailyRecovered());
+                    data.setTodayTest(data.getTests() - findYesterday().getDailyTests());
+                }else {
+                    data.setTodayCritical(0);
+                    data.setTodayDeath(0);
+                    data.setTodayRecovered(0);
+                    data.setTodayTest(0);
+                }
                 dataModelRepo.save(data);
                 in.close();
             } else {

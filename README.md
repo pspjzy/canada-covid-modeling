@@ -1,7 +1,7 @@
-# canada-covid-modeling
-The daily-base visual data model of covid in canada. (Still working on)
+# canada-covid-daily-data
+The daily-based visual data model of covid in Canada.
 
-Springboot+Angular
+Springboot+Angular+Chart.js
 
 Canada Covid Data are from ***[worldometers](https://www.worldometers.info/coronavirus/) and [NovelCOVID API](https://github.com/NovelCOVID/API)***
 

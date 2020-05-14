@@ -1,0 +1,20 @@
+<nav mat-tab-nav-bar mat-align-tabs="center" animationDuration="200ms" color="black">
+  <a mat-tab-link
+     *ngFor="let link of navLinks"
+     [routerLink]="link.link"
+     routerLinkActive #rla="routerLinkActive"
+     [active]="rla.isActive">{{link.label}}</a>
+<!--  <a mat-tab-link color="primary" routerLink="case">case</a>-->
+<!--  <a mat-tab-link routerLink="critical">critical</a>-->
+<!--  <a mat-tab-link routerLink="death">death</a>-->
+<!--  <a mat-tab-link routerLink="recover">recover</a>-->
+<!--  <a mat-tab-link routerLink="test">test</a>-->
+</nav>
+
+
+<div [@routeAnimations]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>
+
+
+

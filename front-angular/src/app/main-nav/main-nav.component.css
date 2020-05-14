@@ -21,16 +21,12 @@ a{
   /*text-align: center;*/
   padding-right: 1rem;
 }
-.sidenav-container{
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
 
-}
-.toolbar{
-  justify-content: center;
-}
+
 .mat-toolbar,.mat-drawer-container{
   background:rgba(255,255,255,0.2) !important;
+}
 
+::ng-deep .mat-ink-bar {
+  background-color: var(--primary-color, #070000) !important;
 }

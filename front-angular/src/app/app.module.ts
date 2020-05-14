@@ -19,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import {MatTabsModule} from "@angular/material/tabs";
 
 @NgModule({
   declarations: [
@@ -31,26 +32,27 @@ import { MatListModule } from '@angular/material/list';
     DailyCriticalComponent,
     MainNavComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    RouterModule.forRoot([
-      { path: '', component: DataViewComponent},
-      { path: 'case', component: DailyCaseComponent},
-      { path: 'critical', component: DailyCriticalComponent},
-      { path: 'death', component: DailyDeathComponent},
-      { path: 'recover', component: DailyRecoverComponent},
-      { path: 'test', component: DailyTestComponent}
-    ]),
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        RouterModule.forRoot([
+            {path: '', component: DataViewComponent},
+            {path: 'case', component: DailyCaseComponent,data:{animation:'case'}},
+            {path: 'critical', component: DailyCriticalComponent,data:{animation:'critical'}},
+            {path: 'death', component: DailyDeathComponent,data:{animation:'death'}},
+            {path: 'recover', component: DailyRecoverComponent,data:{animation:'recover'}},
+            {path: 'test', component: DailyTestComponent,data:{animation:'test'}}
+        ]),
+        LayoutModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatListModule,
+        MatTabsModule
+    ],
   providers: [DataViewService],
   bootstrap: [AppComponent]
 })

@@ -18,4 +18,7 @@
       <module name="canada-corona-modeling" options="-parameters" />
     </option>
   </component>
+  <component name="TypeScriptCompiler">
+    <option name="showAllErrors" value="true" />
+  </component>
 </project>

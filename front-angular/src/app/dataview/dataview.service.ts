@@ -12,6 +12,6 @@ export class DataViewService{
   }
 
   getData(): Observable<Data[]> {
-    return this.http.get<Data[]>('http://127.0.0.1:8080/data/api')
+    return this.http.get<Data[]>('http://35.237.109.158:8080/data/api')
   }
 }

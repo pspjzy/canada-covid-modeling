@@ -3,11 +3,11 @@ import {DataViewService} from "../dataview/dataview.service";
 import { Chart } from 'chart.js'
 
 @Component({
-  selector: 'app-daily-death',
-  templateUrl: './daily-death.component.html',
-  styleUrls: ['./daily-death.component.css']
+  selector: 'app-daily-recover',
+  templateUrl: './daily-recover.component.html',
+  styleUrls: ['./daily-recover.component.css']
 })
-export class DailyDeathComponent implements OnInit {
+export class DailyRecoverComponent implements OnInit {
 
   chart = [];
   dataview = [];
@@ -25,9 +25,7 @@ export class DailyDeathComponent implements OnInit {
         }
       }
       this.dataview = data
-      let dDeath = this.dataview.map(data=>data.todayDeath)
-      let todayCases = this.dataview.map(data => data.todayCases)
-      let todayCasesNoR = todayCases.map((e, i, a) => {
+      let dRecovered = this.dataview.map(data=>data.todayRecovered).map((e, i, a) => {
         let prev = a[i - 1];
         let next = a[i + 1];
         if (e === prev && e === next) return '' + e;
@@ -47,18 +45,18 @@ export class DailyDeathComponent implements OnInit {
 
 
 
-      this.chart.push(new Chart('canvas3',{
+      this.chart.push(new Chart('canvas4',{
         type: 'line',
         data: {
           labels: hour,
           datasets: [
             {
-              label: "death today",
-              data: dDeath,
+              label: "recovered case today",
+              data: dRecovered,
               spanGaps: true,
-              borderColor:'#000000',
+              borderColor:'#12f119',
               fill: false
-            }
+            },
           ]
 
         },
@@ -69,4 +67,5 @@ export class DailyDeathComponent implements OnInit {
 
     })
   }
+
 }

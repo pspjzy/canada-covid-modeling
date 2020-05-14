@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import {DataViewService} from "../dataview/dataview.service";
 import { Chart } from 'chart.js'
 
+
 @Component({
-  selector: 'app-daily-critical',
-  templateUrl: './daily-critical.component.html',
-  styleUrls: ['./daily-critical.component.css']
+  selector: 'app-daily-test',
+  templateUrl: './daily-test.component.html',
+  styleUrls: ['./daily-test.component.css']
 })
-export class DailyCriticalComponent implements OnInit {
+export class DailyTestComponent implements OnInit {
+
   chart = [];
   dataview = [];
   constructor(private dService: DataViewService) {
@@ -24,14 +26,13 @@ export class DailyCriticalComponent implements OnInit {
         }
       }
       this.dataview = data
-      let dCritical = this.dataview.map(data=>data.todayCritical)
-      let todayCases = this.dataview.map(data => data.todayCases)
-      let todayCasesNoR = todayCases.map((e, i, a) => {
+      let dTest = this.dataview.map(data=>data.todayTest).map((e, i, a) => {
         let prev = a[i - 1];
         let next = a[i + 1];
         if (e === prev && e === next) return '' + e;
         return e;
       }).map(e => typeof e === 'string' ? null : e);
+
       let hour = this.dataview.map(hour => {
         let date;
         let hr;
@@ -45,17 +46,16 @@ export class DailyCriticalComponent implements OnInit {
       })//需要test
 
 
-
-      this.chart.push(new Chart('canvas2',{
+      this.chart.push(new Chart('canvas5',{
         type: 'line',
         data: {
           labels: hour,
           datasets: [
             {
-              label: "Critical case",
-              data: dCritical,
+              label: "test today",
+              data: dTest,
               spanGaps: true,
-              borderColor:'#00178b',
+              borderColor:'#db0f0f',
               fill: false
             },
           ]
@@ -68,4 +68,5 @@ export class DailyCriticalComponent implements OnInit {
 
     })
   }
+
 }
