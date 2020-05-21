@@ -7,7 +7,7 @@ import ccm.service.*;
 
 @RestController
 @RequestMapping("/data")
-@CrossOrigin(origins = "http://127.0.0.1:4200")
+@CrossOrigin
 public class DataController {
     private final CcdService cS;
 
@@ -16,7 +16,7 @@ public class DataController {
         this.cS = cS;
     }
     @GetMapping("/api")
-    @CrossOrigin(origins = "http://127.0.0.1:4200")
+    @CrossOrigin
     public Iterable<DataModel> getAllDatas(){
         return cS.getAll();
     }

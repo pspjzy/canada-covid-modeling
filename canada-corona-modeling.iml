@@ -31,6 +31,8 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/front-angular/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/front-angular/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/front/dist" />
       <excludeFolder url="file://$MODULE_DIR$/front/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/src/main/resources/front/dist" />
