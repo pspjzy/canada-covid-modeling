@@ -6,7 +6,6 @@ import { Chart } from 'chart.js'
 @Component({
   selector: 'app-daily-test',
   templateUrl: './daily-test.component.html',
-  styleUrls: ['./daily-test.component.css']
 })
 export class DailyTestComponent implements OnInit {
 

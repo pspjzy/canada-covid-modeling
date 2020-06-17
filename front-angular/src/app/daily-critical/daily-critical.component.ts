@@ -5,7 +5,6 @@ import { Chart } from 'chart.js'
 @Component({
   selector: 'app-daily-critical',
   templateUrl: './daily-critical.component.html',
-  styleUrls: ['./daily-critical.component.css']
 })
 export class DailyCriticalComponent implements OnInit {
   chart = [];

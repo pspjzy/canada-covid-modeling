@@ -5,7 +5,6 @@ import { Chart } from 'chart.js'
 @Component({
   selector: 'app-daily-death',
   templateUrl: './daily-death.component.html',
-  styleUrls: ['./daily-death.component.css']
 })
 export class DailyDeathComponent implements OnInit {
 

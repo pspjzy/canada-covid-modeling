@@ -5,7 +5,6 @@ import { Chart } from 'chart.js'
 @Component({
   selector: 'app-daily-recover',
   templateUrl: './daily-recover.component.html',
-  styleUrls: ['./daily-recover.component.css']
 })
 export class DailyRecoverComponent implements OnInit {
 
