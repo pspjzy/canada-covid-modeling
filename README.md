@@ -12,6 +12,6 @@ TODOs:
 - [X] Data automation retrieve
 - [X] Frontend structure
 - [X] Data visualization
-- [ ] Testing
+- [X] Testing
 - [X] Demo Service deploy
 - [X] Pray :pray:
