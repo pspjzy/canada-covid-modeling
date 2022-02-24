@@ -5,8 +5,6 @@ Springboot+Angular+Chart.js
 
 Canada Covid Data are from ***[worldometers](https://www.worldometers.info/coronavirus/) and [NovelCOVID API](https://github.com/NovelCOVID/API)***
 
-Demo site: [Canada Covid DataModel](https://pspjzy.github.io/canada-covid-modeling/case)
-
 TODOs:
 - [x] REST API
 - [X] Data automation retrieve
